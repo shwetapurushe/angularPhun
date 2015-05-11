@@ -1,0 +1,24 @@
+{
+  "name": "angularPhun",
+  "version": "0.0.1",
+  "homepage": "https://github.com/shwetapurushe/angularPhun",
+  "authors": [
+    "shwetapurushe <shwetapurushe@gmail.com>"
+  ],
+  "description": "Testing an playing with different concepts in angular",
+  "keywords": [
+    "Angular",
+    "Fun"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.3.15"
+  }
+}
