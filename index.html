@@ -4,8 +4,16 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body ng-controller="appController as main">
-{{main.stats}}
+<body ng-controller="parentController as main">
+    Parent variable : {{main.stats}}
+
+    <div ng-controller="babyController as baby">
+
+        Inside child controller :
+        Baby : {{baby.stats}}
+        Parent : {{main.stats}}
+
+    </div>
 
 <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 <script type="text/javascript" src="app.js"></script>

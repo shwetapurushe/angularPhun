@@ -4,6 +4,10 @@
 
 var fun_App = angular.module('app', []);
 
-fun_App.controller("appController", function(){
+fun_App.controller("parentController", function(){
     this.stats = "Hello Shweta";
+});
+
+fun_App.controller("babyController", function(){
+    this.stats = "Hello Baby Shweta";
 });
