@@ -1,21 +1,18 @@
 <!DOCTYPE html>
-<html ng-app = "app">
+<html ng-app = "phun_app">
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body ng-controller="parentController as main">
-    Parent variable : {{main.stats}}
-
-    <div ng-controller="babyController as baby">
-
-        Inside child controller :
-        Baby : {{baby.stats}}
-        Parent : {{main.stats}}
-
+<body>
+    <div style = "width:200px; height: 200px; background-color: red"
+         ng-controller="testController as tCtrl" ng-click = "tCtrl.printProp()">
+        {{tCtrl.testMessage}}
     </div>
 
-<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-<script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="myModule/testController.js"></script>
+    <script type="text/javascript" src="myModule/testService.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
