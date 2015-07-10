@@ -5,6 +5,13 @@
     angular.module('phun_app.myModule').service('testService',testService );
 
     function testService (){
-        this.testProp = "Hello Shweta";
+        var that = this;
+
+        that.counter = 0;
+        that.testProp = "Hello Shweta";
+
+        that.incrementCounter = function(){
+          that.counter++;
+        };
     }
 })();
