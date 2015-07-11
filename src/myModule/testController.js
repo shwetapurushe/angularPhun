@@ -2,7 +2,7 @@
  * Created by Shweta on 7/10/2015.
  */
 (function(){
-    angular.module('phun_app.myModule', []);
+   // angular.module('phun_app.myModule', []);
     angular.module('phun_app.myModule').controller('testController', testController);
 
     testController.$inject = ['testService'];
@@ -16,6 +16,11 @@
 
             var greeting = "Hey!";
             console.log(greeting + tCtrl.testService.testProp);
+        };
+
+        tCtrl.changeMessage = function(new_mes){
+            tCtrl.testMessage  = new_mes;
+            console.log("New Message : ", tCtrl.testMessage);
         };
     };
 })();
