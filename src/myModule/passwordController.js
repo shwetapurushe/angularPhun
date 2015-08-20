@@ -1,7 +1,7 @@
 /**
  * Created by Shweta on 7/10/2015.
  */
-angular.module('phun_app.myModule',[])
+angular.module('phun_app.myModule')
     .controller('PasswordController', passwordController);
 
 function passwordController ($scope){

@@ -4,5 +4,5 @@
 
 (function(){
 
-    angular.module('phun_app', ['phun_app.myModule']);
+    angular.module('phun_app', ['phun_app.myModule', 'ui.grid', 'ui.grid.treeView']);
 })();
