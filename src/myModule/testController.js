@@ -41,7 +41,7 @@
         };
 
 
-        $http.get('500_complex.json')
+        $http.get('lib/500_complex.json')
             .success(function(data) {
                 for ( var i = 0; i < data.length; i++ ){
                     data[i].state = data[i].address.state;
