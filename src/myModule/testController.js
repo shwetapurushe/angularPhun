@@ -5,8 +5,8 @@
     angular.module('phun_app.myModule', []);
     angular.module('phun_app.myModule').controller('testController', testController);
 
-    testController.$inject = ['testService', '$http'];
-    function testController(testService, $http){
+    testController.$inject = ['testService', '$http', '$scope'];
+    function testController(testService, $http, $scope){
         var tCtrl = this;
 
         tCtrl.testMessage = "Hola!";
@@ -17,7 +17,24 @@
           expandableRowHeight : 150,
           expandableRowScope : {
               subGridVariable : 'subGridScopeVariable'
-          }
+          },
+        onRegisterApi: function (gridApi) {
+            gridApi.expandable.on.rowExpandedStateChanged($scope, function (row) {
+                if (row.isExpanded) {
+                    row.entity.subGridOptions = {
+                        columnDefs: [
+                            { name: 'name'},
+                            { name: 'gender'},
+                            { name: 'company'}
+                        ]};
+
+                    $http.get('lib/100.json')
+                        .success(function(data) {
+                            row.entity.subGridOptions.data = data;
+                        });
+                }
+            });
+        }
         };
 
         tCtrl.gridOptions.columnDefs = [
@@ -28,19 +45,10 @@
         ];
 
         $http.get('lib/500_complex.json')
-            .success(function(data){
-                for(var i =0 ;i < data.length; i++){
-                    data[i].subGridOptions = {
-                        columnDefs : [{name : "Id", field : "id"}, {name: "Name", field : "name"}],
-                        data : data[i].friends
-                    }
-                }
-                tCtrl.gridOptions.data = data;
+            .success(function(data) {
+            tCtrl.gridOptions.data = data;
         });
 
-        tCtrl.gridOptions.onRegisterApi = function (gridApi){
-            tCtrl.gridApi = gridApi;
-        };
 
 
         //works for tree view
