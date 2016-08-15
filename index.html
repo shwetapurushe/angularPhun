@@ -1,23 +1,14 @@
 <!DOCTYPE html>
-<html ng-app = "phun_app">
+<html ng-app="myApp">
 <head lang="en">
     <meta charset="UTF-8">
     <title>ng-Phun</title>
-
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css"/>
 </head>
-<body ng-controller="testController as tCtrl">
-    <!--regular grid -->
-    <!--<div class = "myGrid" ui-grid="tCtrl.gridOptions" ui-grid-tree-view></div-->
+<body ng-controller="mainController as mainCtrl">
 
-    <div ui-grid="tCtrl.gridOptions" ui-grid-pinning ui-grid-expandable class="grid"></div>
+	{{mainCtrl.greeting}}
 
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="bower_components/angular-ui-grid/ui-grid.min.js"></script>
-    <script type="text/javascript" src="src/myModule/testController.js"></script>
-    <script type="text/javascript" src="src/myModule/passwordController.js"></script>
-    <script type="text/javascript" src="src/myModule/testService.js"></script>
     <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
