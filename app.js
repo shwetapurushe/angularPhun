@@ -1,6 +1,6 @@
 (function(){
 	"use strict";
-	angular.module('myApp', []);
+	angular.module('myApp', ['myApp.module1']);
 
 	angular.module('myApp').controller('mainController', mainController);
 

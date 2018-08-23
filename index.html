@@ -8,7 +8,12 @@
 
 	{{mainCtrl.greeting}}
 
+	<div ng-controller="module1Controller as mdC">
+		{{mdC.update}}
+	</div>
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="src/module1/module.js"></script>
+	<script type="text/javascript" src="src/module1/module1Controller.js"></script>
     <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
